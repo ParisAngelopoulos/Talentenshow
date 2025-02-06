@@ -1,6 +1,6 @@
 <?php
 $host = 'local';
-$dbname = 'Talentenschow';
+$dbname = 'talentenshow';
 $user = 'root';
 $password = '';
 
