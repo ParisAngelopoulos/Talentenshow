@@ -1,9 +1,11 @@
 <?php
 // Databaseverbinding, gedeeld door connect.php (tickets) en aanmelden.php (deelnemers)
-$host = 'localhost';
-$dbname = 'talentenshow';
-$user = 'root';
-$password = '';
+// On the web host, db_config.php (written on deploy, not in git) holds the login; locally XAMPP defaults
+$c = is_file(__DIR__ . '/db_config.php') ? require __DIR__ . '/db_config.php' : [];
+$host = $c['host'] ?? 'localhost';
+$dbname = $c['database'] ?? 'talentenshow';
+$user = $c['user'] ?? 'root';
+$password = $c['password'] ?? '';
 
 $dbh = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
