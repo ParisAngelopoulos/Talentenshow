@@ -23,7 +23,9 @@ Een website voor een talentenshow: je leest wat de show is, meldt je aan als dee
 
 ## Hoe het werkt
 
-- Het bestelformulier gaat naar `connect.php`. Dat bestand controleert of alle velden zijn ingevuld, kijkt of het e-mailadres klopt en slaat de bestelling op met een **prepared statement** (PDO).
+- Het bestelformulier gaat naar `connect.php`. Dat bestand controleert of alle velden zijn ingevuld, kijkt of het e-mailadres klopt en slaat de bestelling op in de tabel `bestelen` met een **prepared statement** (PDO).
+- Het aanmeldformulier gaat naar `aanmelden.php` en slaat de deelnemer met zijn categorie (zingen, dansen, comedy of goochelen) op in de tabel `aanmeldingen`.
+- Na het versturen krijg je een bedankpagina in de stijl van de site. De databaseverbinding staat in `db.php`.
 - De site is responsive. Op een telefoon klapt het menu in tot een hamburgerknop (`app.js`).
 - Alle opmaak staat in `style.css`, zonder framework.
 
@@ -35,19 +37,8 @@ Je hebt een lokale webserver met PHP en MySQL nodig, bijvoorbeeld XAMPP.
    ```bash
    git clone https://github.com/ParisAngelopoulos/Talentenshow.git
    ```
-2. Maak in phpMyAdmin een database `talentenshow` aan met deze tabel:
-   ```sql
-   CREATE TABLE bestelen (
-     id        INT AUTO_INCREMENT PRIMARY KEY,
-     name      VARCHAR(100) NOT NULL,
-     lastname  VARCHAR(100) NOT NULL,
-     email     VARCHAR(255) NOT NULL,
-     birthdate DATE NOT NULL,
-     mobile    VARCHAR(20)  NOT NULL,
-     address   VARCHAR(255) NOT NULL
-   );
-   ```
-3. Zet in `connect.php` de host op `localhost`.
+2. Maak in phpMyAdmin een database aan met de naam `talentenshow`.
+3. Importeer daarin het bestand `talentenshow.sql`. Daarin staan al 8 ticketbestellingen en 6 aanmeldingen.
 4. Ga naar http://localhost/Talentenshow.
 
 ---
