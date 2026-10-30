@@ -1,222 +1,184 @@
+/* TalentenShow – own CSS, no framework */
+:root {
+  --paars: #8a3ea8;
+  --paars-donker: #6b2d84;
+  --paars-licht: #f4ecf8;
+  --roze: #e2498a;
+  --tekst: #1f1a24;
+  --grijs: #6b6472;
+  --lijn: #e7e1ec;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
 body {
-	margin: 0;
-	font-family: Arial, sans-serif;
-  }
-  
-  nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: rgb(212, 227, 237);
-	color: rgb(0, 0, 0);
-	position: relative;
-	z-index: 1;
-  }
-  
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--tekst);
+  background: #fff;
+  line-height: 1.6;
+}
+
+a { color: var(--paars); }
+img { max-width: 100%; display: block; }
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--lijn);
+}
+
+.logo img { width: 72px; height: auto; }
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--tekst);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.actief { background: var(--paars); color: #fff; }
+
+.hamburger { display: none; cursor: pointer; background: none; border: 0; padding: 6px; }
+.line { width: 28px; height: 3px; background: var(--tekst); margin: 5px 0; border-radius: 3px; }
+
+/* Hero */
+.hero-image {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("Images/achtergrond.jpg") center / cover no-repeat;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31, 10, 40, 0.55), rgba(31, 10, 40, 0.75));
+}
+
+.hero-content { position: relative; text-align: center; color: #fff; padding: 0 20px; max-width: 720px; }
+.hero-content h1 { color: #fff; font-size: clamp(36px, 6vw, 60px); margin: 0 0 12px; line-height: 1.1; }
+.hero-content p { font-size: 20px; margin: 0 0 28px; opacity: 0.95; }
+.hero-datum { display: inline-block; margin-bottom: 18px; padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.15); font-weight: 600; }
+
+/* Buttons */
+.btn, button.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--paars), var(--roze));
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(138, 62, 168, 0.35); }
+.btn-licht { background: #fff; color: var(--paars); }
+.knoppen { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* Sections on the home page */
+.sectie { max-width: 1040px; margin: 0 auto; padding: 64px 20px; }
+.sectie h2 { font-size: 32px; text-align: center; margin: 0 0 8px; }
+.sectie .intro { text-align: center; color: var(--grijs); max-width: 620px; margin: 0 auto 36px; }
+.band { background: var(--paars-licht); }
+
+.kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+.kaart { background: #fff; border: 1px solid var(--lijn); border-radius: var(--radius); padding: 24px; text-align: center; }
+.kaart .icoon { font-size: 40px; }
+.kaart h3 { margin: 10px 0 6px; }
+.kaart p { margin: 0; color: var(--grijs); font-size: 15px; }
+
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.info div { background: #fff; border-radius: var(--radius); padding: 22px; border: 1px solid var(--lijn); }
+.info strong { display: block; font-size: 22px; color: var(--paars); }
+.info span { color: var(--grijs); }
+
+/* Forms */
+.container { max-width: 640px; margin: 0 auto; padding: 48px 20px; }
+
+h1 { color: var(--paars); text-align: center; font-size: 36px; margin: 0 0 8px; }
+.container .intro { text-align: center; color: var(--grijs); margin: 0 0 28px; }
+
+form.formulier { background: #fff; border: 1px solid var(--lijn); border-radius: var(--radius); padding: 28px; box-shadow: 0 10px 30px rgba(31, 10, 40, 0.06); }
+.rij { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 6px; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  border: 1.5px solid var(--lijn);
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--paars);
+  box-shadow: 0 0 0 4px rgba(138, 62, 168, 0.15);
+}
+
+form.formulier .btn { width: 100%; margin-top: 6px; }
+
+/* Thank-you page */
+.melding { text-align: center; background: var(--paars-licht); border-radius: var(--radius); padding: 40px 24px; }
+.melding p { font-size: 18px; }
+
+/* Footer */
+footer { background: #1f1a24; color: #cfc6d6; padding: 32px 20px; text-align: center; }
+footer p { margin: 0 0 12px; font-size: 14px; }
+.social-media { display: flex; justify-content: center; gap: 14px; }
+.social-media img { width: 28px; height: 28px; filter: grayscale(1) brightness(2); transition: filter 0.2s; }
+.social-media a:hover img { filter: none; }
+
+@media (max-width: 640px) {
+  .hamburger { display: block; }
   .nav-links {
-	display: flex;
-	justify-content: right;
-	align-items: center;
-	top: 100%;
-	left: 0;
-	width: 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 12px;
+    background: #fff;
+    border-bottom: 1px solid var(--lijn);
   }
-  
-  .nav-links li {
-	list-style: none;
-  }
-  
-  .nav-links a {
-	color: rgb(0, 0, 0);
-	text-decoration: none;
-	padding: 10px;
-	display: block;
-	font-size: 22px;
-  }
-  
-  .nav-links a:hover {
-	background-color: rgb(161, 128, 235);
-	color: rgb(255, 255, 255);
-	transition: 0.5s;
-  }
-  
-  .logo img {
-	width: 100px;
-	height: auto;
-	margin-right: 10px;
-  }
-  
-  .hamburger {
-	display: none;
-	cursor: pointer;
-  }
-  
-  .line {
-	width: 30px;
-	height: 3px;
-	background-color: rgb(0, 0, 0);
-	margin: 5px;
-	border-radius: 5px;
-  }
-  
-  .hero-image {
-	background-image: url("Images/achtergrond.jpg");
-	height: 75vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-  }
-  
-  .hero-content {
-	text-align: center;
-	color: white;
-  }
-  
-  .hero-content h1 {
-	font-size: 40px;
-	margin-bottom: 20px;
-  }
-  
-  .hero-content button {
-	padding: 10px 20px;
-	background-color: rgb(161, 128, 235);
-	border: none;
-	color: white;
-	font-size: 16px;
-	cursor: pointer;
-  }
-  
-  .container {
-	margin: 0 auto;
-	padding: 40px 20px;
-	max-width: 700px;
-  }
-  
-  .form-group {
-	margin-bottom: 20px;
-  }
-  
-  .form-group label {
-	display: block;
-	font-size: 18px;
-	margin-bottom: 5px;
-	color: rgb(161, 128, 235);
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="date"],
-  .form-group input[type="tel"],
-  .form-group textarea {
-	width: 100%;
-	padding: 12px;
-	font-size: 16px;
-	border: 2px solid #ccc;
-	border-radius: 8px;
-	box-sizing: border-box;
-	transition: all 0.3s ease;
-  }
-  
-  .form-group input[type="text"]:focus,
-  .form-group input[type="date"]:focus,
-  .form-group input[type="tel"]:focus,
-  .form-group textarea:focus {
-	border-color: rgb(161, 128, 235);
-	outline: none;
-	box-shadow: 0 0 5px rgba(161, 128, 235, 0.6);
-  }
-  
-  .form-group textarea {
-	height: 100px;
-	resize: vertical;
-  }
-  
-  .btn {
-	background-color: rgb(161, 128, 235);
-	color: white;
-	padding: 12px 20px;
-	border: none;
-	cursor: pointer;
-	font-size: 18px;
-	border-radius: 8px;
-	transition: background-color 0.3s;
-  }
-  
-  .btn:hover {
-	background-color: rgb(0, 0, 0);
-  }
-  
-  h1 {
-	color: rgb(161, 128, 235);
-	text-align: center;
-	font-size: 36px;
-	margin-bottom: 40px;
-  }
-  
-  footer {
-	background-color: rgb(212, 227, 237);
-	padding: 24px;
-	text-align: center;
-  }
-  
-  .social-media {
-	margin-top: 10px;
-  }
-  
-  .social-media a {
-	display: inline-block;
-	margin: 0 10px;
-  }
-  
-  .social-media img {
-	width: 30px;
-	height: 30px;
-  }
-  
-  @media only screen and (max-width: 600px) {
-	.nav-links {
-	  display: none;
-	  flex-direction: column;
-	  position: absolute;
-	  top: 80%;
-	  background-color: rgb(161, 128, 235);
-	  width: 100%;
-	  text-align: center;
-	  right: 0;
-	  left: auto;
-	}
-  
-	.nav-links li {
-	  margin: 10px 0;
-	  text-align: center;
-	}
-  
-	.nav-links.open {
-	  display: block;
-	  width: 100%;
-	}
-  
-	.hamburger {
-	  display: block;
-	}
-  
-	.hero-content {
-	  padding: 0 20px;
-	}
-  
-	footer {
-	  padding: 10px;
-	}
-  
-	.social-media a {
-	  margin: 0 5px;
-	}
-  
-	.social-media img {
-	  width: 25px;
-	  height: 25px;
-	}
-  }
-  
+  /* app.js sets "active" when the hamburger is clicked */
+  .nav-links.active { display: flex; }
+  .rij { grid-template-columns: 1fr; }
+  .sectie { padding: 48px 20px; }
+}

@@ -24,17 +24,19 @@ function toon_melding($titel, $tekst) {
 </head>
 <body>
     <nav>
-        <div class="logo"><a href="index.html"><img src="Images/logo.png" alt="Logo"></a></div>
-        <ul class="nav-links">
+        <a class="logo" href="index.html"><img src="Images/logo.png" alt="TalentenShow"></a>
+        <ul class="nav-links" style="display:flex">
             <li><a href="index.html">Home</a></li>
-            <li><a href="bestellen.html">Bestellen</a></li>
-            <li><a href="aanmelden.html">Aanmelden</a></li>
+            <li><a href="bestellen.html">Tickets</a></li>
+            <li><a href="aanmelden.html">Meedoen</a></li>
         </ul>
     </nav>
     <div class="container">
-        <h1><?php echo htmlspecialchars($titel); ?></h1>
-        <p><?php echo htmlspecialchars($tekst); ?></p>
-        <p><a href="index.html">Terug naar de homepage</a></p>
+        <div class="melding">
+            <h1><?php echo htmlspecialchars($titel); ?></h1>
+            <p><?php echo htmlspecialchars($tekst); ?></p>
+            <a href="index.html" class="btn">Terug naar de homepage</a>
+        </div>
     </div>
 </body>
 </html>

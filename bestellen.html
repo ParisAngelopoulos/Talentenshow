@@ -4,68 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>TalentenShow - Bestellen</title>
+    <title>Tickets · TalentenShow</title>
 </head>
 <body>
     <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="Images/logo.png" alt="Logo">
-            </a>
-        </div>
-
-        <div class="hamburger">
+        <a class="logo" href="index.html"><img src="Images/logo.png" alt="TalentenShow"></a>
+        <button class="hamburger" aria-label="Menu">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
-        </div>
-
+        </button>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="bestellen.html">Bestellen</a></li>
-            <li><a href="aanmelden.html">Aanmelden</a></li>
+            <li><a href="bestellen.html" class="actief">Tickets</a></li>
+            <li><a href="aanmelden.html">Meedoen</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h1>Bestel je Ticket Vandaag!</h1>
-        <form action="connect.php" method="POST">
-            <div class="form-group">
-                <label for="name">Naam</label>
-                <input type="text" id="name" name="name" required>
+        <h1>Bestel je ticket</h1>
+        <p class="intro">€ 7,50 per ticket. Je krijgt een bevestiging op je e-mailadres en betaalt bij de ingang.</p>
+        <form action="connect.php" method="POST" class="formulier">
+            <div class="rij">
+                <div class="form-group">
+                    <label for="name">Voornaam</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Achternaam</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
             </div>
             <div class="form-group">
-                <label for="lastname">Achternaam</label>
-                <input type="text" id="lastname" name="lastname" required>
+                <label for="email">E-mailadres</label>
+                <input type="email" id="email" name="email" required>
             </div>
-            <div class="form-group">
-                <label for="birthdate">Geboortedatum</label>
-                <input type="date" id="birthdate" name="birthdate" required>
-            </div>
-            <div class="form-group">
-                <label for="mobile">Telefoonnummer</label>
-                <input type="tel" id="mobile" name="mobile" required>
+            <div class="rij">
+                <div class="form-group">
+                    <label for="birthdate">Geboortedatum</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Telefoonnummer</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
             </div>
             <div class="form-group">
                 <label for="address">Adres</label>
                 <input type="text" id="address" name="address" required>
             </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <button type="submit">Bestellen</button>
+            <button type="submit" class="btn">Ticket bestellen</button>
         </form>
     </div>
-    
+
     <footer>
+        <p>TalentenShow · een project van <a href="https://parisangelopoulos.com" style="color:#fff">Paris Angelopoulos</a></p>
         <div class="social-media">
-          <a href="https://www.facebook.com"><img src="Images/facebook.png" alt="Facebook"></a>
-          <a href="https://www.twitter.com"><img src="Images/twitter.png" alt="Twitter"></a>
-          <a href="https://www.instagram.com"><img src="Images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="Images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="Images/twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com"><img src="Images/instagram.png" alt="Instagram"></a>
         </div>
     </footer>
-    
+
     <script src="app.js"></script>
 </body>
 </html>
