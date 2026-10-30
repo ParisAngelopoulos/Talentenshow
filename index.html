@@ -1,53 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>TalentenShow</title>
-  </head>
-  <body>
+</head>
+<body>
     <nav>
-
-        <div class="logo">
-           <a href="index.html">
-           <img src="Images/logo.png" alt="Logo">
-           </a>
-        </div>
-
-        <div class="hamburger">
-           <div class="line"></div>
-           <div class="line"></div>
-           <div class="line"></div>
-        </div>
-
+        <a class="logo" href="index.html"><img src="Images/logo.png" alt="TalentenShow"></a>
+        <button class="hamburger" aria-label="Menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="bestellen.html">Bestellen</a></li>
-            <li><a href="aanmelden.html">Aanmelden</a></li>
- 
-         </ul>
+            <li><a href="index.html" class="actief">Home</a></li>
+            <li><a href="bestellen.html">Tickets</a></li>
+            <li><a href="aanmelden.html">Meedoen</a></li>
+        </ul>
+    </nav>
 
-     </nav>
-
-    <div class="hero-image">
+    <header class="hero-image">
         <div class="hero-content">
-            <h1>Welcome to TalentenShow</h1>
-            <a href="bestellen.html"><button>Get Started</button></a>
+            <span class="hero-datum">Zaterdag 14 maart 2026 · 19:30</span>
+            <h1>De TalentenShow van Veenendaal</h1>
+            <p>Eén avond, één podium en een zaal vol publiek. Kom kijken of laat zelf zien wat je kunt.</p>
+            <div class="knoppen">
+                <a href="bestellen.html" class="btn">Bestel tickets</a>
+                <a href="aanmelden.html" class="btn btn-licht">Doe mee</a>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <section class="sectie">
+        <h2>Vier categorieën</h2>
+        <p class="intro">Iedereen mag meedoen. Je kiest zelf in welke categorie je optreedt; per act heb je vijf minuten.</p>
+        <div class="kaarten">
+            <div class="kaart"><div class="icoon">🎤</div><h3>Zingen</h3><p>Solo, duet of met je band.</p></div>
+            <div class="kaart"><div class="icoon">💃</div><h3>Dansen</h3><p>Van hiphop tot ballet.</p></div>
+            <div class="kaart"><div class="icoon">😂</div><h3>Comedy</h3><p>Stand-up of een sketch.</p></div>
+            <div class="kaart"><div class="icoon">🎩</div><h3>Goochelen</h3><p>Laat het publiek verbaasd staan.</p></div>
+        </div>
+    </section>
+
+    <section class="band">
+        <div class="sectie">
+            <h2>Praktisch</h2>
+            <p class="intro">Alles wat je moet weten voor de avond zelf.</p>
+            <div class="info">
+                <div><strong>14 maart 2026</strong><span>Zaal open om 19:00, de show begint om 19:30.</span></div>
+                <div><strong>€ 7,50</strong><span>per ticket, je betaalt bij de ingang.</span></div>
+                <div><strong>Veenendaal</strong><span>In de theaterzaal, met plek voor 300 bezoekers.</span></div>
+                <div><strong>Jury + publiek</strong><span>De jury kiest de winnaar, het publiek de publieksprijs.</span></div>
+            </div>
+            <div class="knoppen" style="margin-top:32px">
+                <a href="bestellen.html" class="btn">Bestel nu je ticket</a>
+            </div>
+        </div>
+    </section>
 
     <footer>
+        <p>TalentenShow · een project van <a href="https://parisangelopoulos.com" style="color:#fff">Paris Angelopoulos</a></p>
         <div class="social-media">
-          <a href="https://www.facebook.com"><img src="Images/facebook.png" alt="Facebook"></a>
-          <a href="https://www.twitter.com"><img src="Images/twitter.png" alt="Twitter"></a>
-          <a href="https://www.instagram.com"><img src="Images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="Images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="Images/twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com"><img src="Images/instagram.png" alt="Instagram"></a>
         </div>
-      </footer>
+    </footer>
 
     <script src="app.js"></script>
-
-
 </body>
-
 </html>

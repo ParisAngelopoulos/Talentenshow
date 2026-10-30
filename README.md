@@ -17,7 +17,7 @@ Een website voor een talentenshow: je leest wat de show is, meldt je aan als dee
 
 | Pagina | Wat je er doet |
 | --- | --- |
-| `index.html` | De homepage met uitleg over de show |
+| `index.html` | De homepage: datum, de vier categorieën, praktische info en ticketprijs |
 | `aanmelden.html` | Je aanmelden als deelnemer |
 | `bestellen.html` | Tickets bestellen |
 
@@ -27,6 +27,7 @@ Een website voor een talentenshow: je leest wat de show is, meldt je aan als dee
 - Het aanmeldformulier gaat naar `aanmelden.php` en slaat de deelnemer met zijn categorie (zingen, dansen, comedy of goochelen) op in de tabel `aanmeldingen`.
 - Na het versturen krijg je een bedankpagina in de stijl van de site. De databaseverbinding staat in `db.php`; de database zelf in `private/`, dat niet via het web te openen is.
 - De site is responsive. Op een telefoon klapt het menu in tot een hamburgerknop (`app.js`).
+- Alle opmaak is eigen CSS met CSS-variabelen voor de kleuren, zonder framework.
 - Alle opmaak staat in `style.css`, zonder framework.
 
 ## Zelf draaien
