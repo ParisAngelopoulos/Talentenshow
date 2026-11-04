@@ -24,7 +24,7 @@ try {
     // Prepared statement: de invoer komt nooit in de SQL zelf
     $stmt = $dbh->prepare("INSERT INTO bestelen (name, lastname, email, birthdate, mobile, address) VALUES (:name, :lastname, :email, :birthdate, :mobile, :address)");
     $stmt->execute($data);
-    toon_melding('Bedankt voor je bestelling!', "Je ticket is besteld, {$data['name']}. We sturen de bevestiging naar {$data['email']}.");
+    toon_melding('Bedankt voor je bestelling', "Je ticket is besteld, {$data['name']}. We sturen de bevestiging naar {$data['email']}.");
 } catch (PDOException $e) {
     error_log($e->getMessage());
     toon_melding('Er ging iets mis', 'Je bestelling kon niet worden opgeslagen. Probeer het later opnieuw.');

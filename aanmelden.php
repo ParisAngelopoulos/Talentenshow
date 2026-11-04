@@ -23,7 +23,7 @@ if (!in_array($data['category'], ['Singing', 'Dancing', 'Comedy', 'Magic'], true
 try {
     $stmt = $dbh->prepare("INSERT INTO aanmeldingen (name, lastname, birthdate, mobile, address, category) VALUES (:name, :lastname, :birthdate, :mobile, :address, :category)");
     $stmt->execute($data);
-    toon_melding('Je bent aangemeld!', "Leuk dat je meedoet, {$data['name']}. We nemen contact met je op via {$data['mobile']}.");
+    toon_melding('Je bent aangemeld', "Leuk dat je meedoet, {$data['name']}. We nemen contact met je op via {$data['mobile']}.");
 } catch (PDOException $e) {
     error_log($e->getMessage());
     toon_melding('Er ging iets mis', 'Je aanmelding kon niet worden opgeslagen. Probeer het later opnieuw.');
